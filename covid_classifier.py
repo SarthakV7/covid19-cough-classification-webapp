@@ -196,17 +196,45 @@ st.markdown('''<p style="font-size: 72px;
                 COVID-19 classification through cough audio.
                 </p>''', unsafe_allow_html=True)
 
-
-st.sidebar.title("About")
-st.sidebar.markdown('''<p style="font-size: 72px;
-                        background: -webkit-linear-gradient(#dd2476, #ff512f);
+def small_title(x):
+    text = f'''<p style="background: -webkit-linear-gradient(#dd2476, #ff512f);
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
                         font-family: sans-serif;
                         font-weight: bold;
-                        font-size:15px">
-                        COVID-19 classification through cough audio.
-                        </p>''', unsafe_allow_html=True)
+                        font-size:18px">
+                        {x}
+                        </p>'''
+    return text
+
+def html_links(text, link):
+    return f'''<a href="{link}" target="_blank">{text}</a>'''
+
+style = '''font_size: 14px;
+           color: #aaa;'''
+
+st.sidebar.title("About")
+img_width = '60px'
+
+text = f'''{small_title('The webapp')}
+<p style="{style}">This webapp uses AI and cough audio to predict COVID-19.
+Users can submit their cough audio either as a .wav file or directly record it on the dashboard.</p>
+{small_title('The deep-learning model')}
+<p style="{style}">The model was trained on crowd-sourced audio data made available by project {html_links('COSWARA', 'https://coswara.iisc.ac.in/about')} by IISC Bangalore and project {html_links('COUGHVID', 'https://coughvid.epfl.ch/about/')} by EPFL.
+Although the model performs well and has Accuracy, Sensitivity, Specificity and, AUC score above 0.9, it still needs rigorous testing to reduce the False Negatives and Fasle Positives.</p>
+{small_title('Cautionary advice')}
+<p style="{style}">The model is still in beta-stage, and is purposely fine-tuned to be biased towards reducing the False Negatives which means, it is highly likely to classify a user as COVID-19 positive.
+If there are any COVID-19 symptoms, please get tested irrespective of the classification result.</p>
+{small_title('The developer')}
+<p style="{style}">I am a data lover who loves to create impactful tools that could help people make this world a better place.</p>
+<div>
+<a href="https://github.com/SarthakV7/covid19-cough-classification-webapp" target="_blank"><img src="https://raw.githubusercontent.com/SarthakV7/covid-19-dashboard/master/assets/images/github.svg" width={img_width}"></a>
+<a href="https://www.kaggle.com/sarthakvajpayee" target="_blank"><img src="https://raw.githubusercontent.com/SarthakV7/covid-19-dashboard/master/assets/images/kaggle.svg" width={img_width}"></a>
+<a href="https://www.linkedin.com/in/sarthak-vajpayee/" target="_blank"><img src="https://raw.githubusercontent.com/SarthakV7/covid-19-dashboard/master/assets/images/linkedin.svg" width={img_width}"></a>
+<a href="https://medium.com/@itssarthakvajpayee/" target="_blank"><img src="https://raw.githubusercontent.com/SarthakV7/covid-19-dashboard/master/assets/images/medium.png" width={img_width}"></a>
+</div>
+'''
+st.sidebar.markdown(text, unsafe_allow_html=True)
 
 data_load_state = st.text('Loading data...')
 model = load_model()
