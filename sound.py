@@ -9,7 +9,7 @@ class Sound(object):
         self.channels = 1
         self.sample_rate = 48000
         self.chunk = 1024
-        self.duration = 2
+        self.duration = 6
         self.path = str(datetime.datetime.now()).replace('.','').replace(':','').replace(' ','-') + '.wav'
         self.device = 0
         self.frames = []
