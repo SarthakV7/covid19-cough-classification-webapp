@@ -246,7 +246,7 @@ session_state = SessionState.get(name='', path=None)
 
 with st.form(key='uploader'):
     uploaded_file = st.file_uploader("Choose a file... (Try to keep the audio short 5-6 seconds and upload as a .wav file)")
-    submit_button_upl = st.form_submit_button(label='Submit the uploaded audio!=')
+    submit_button_upl = st.form_submit_button(label='Submit the uploaded audio')
 
 if st.button('Record'):
     with st.spinner(f'Recording for 5 seconds ....'):
@@ -258,9 +258,10 @@ if st.button('Record'):
     st.success("Recording completed")
 
 if st.button('Submit the recorded audio'):
-    filename = 'audio.wav'
-    # filename = session_state.path
+    # filename = 'audio.wav'
+    filename = session_state.path
     display_results(filename, flag='recorded')
+    os.remove(filename)
 
 if (uploaded_file is None and submit_button_upl):
     st.subheader('Something\'s not right, please refresh the page and retry!')
