@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b65ab6e1-0f6f-4edc-bc38-1a6453a74c67" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/audio_samples/neg_samples_neg_10.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/audio_samples/neg_samples_neg_4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/audio_samples/neg_samples_neg_6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/audio_samples/pos_samples_pos_4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/audio_samples/pos_samples_pos_5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/audio_samples/pos_samples_pos_7.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/github.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/kaggle.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/linkedin.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/medium.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/medium.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/covid_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/covid_classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/sound.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/covid_classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="238" lean-forward="true" selection-start-line="238" selection-end-line="238" />
+            <state relative-caret-position="261">
+              <caret line="237" column="49" lean-forward="true" selection-start-line="237" selection-start-column="49" selection-end-line="237" selection-end-column="49" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -57,6 +46,7 @@
       <find>#ff</find>
       <find>#f</find>
       <find>COVID-19 classification through cough audio.</find>
+      <find>img_width</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -88,17 +78,6 @@
             <path>
               <item name="covid19-cough-classification-webapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="covid19-cough-classification-webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="covid19-cough-classification-webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="covid19-cough-classification-webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="covid19-cough-classification-webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="covid19-cough-classification-webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -136,7 +115,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="728" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="728" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.18189038" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -167,20 +146,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html" />
     <entry file="file://$PROJECT_DIR$/templates/styles.css" />
+    <entry file="file://$PROJECT_DIR$/static/css/styles.css" />
     <entry file="file://$PROJECT_DIR$/covid_classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="238" lean-forward="true" selection-start-line="238" selection-end-line="238" />
+        <state relative-caret-position="261">
+          <caret line="237" column="49" lean-forward="true" selection-start-line="237" selection-start-column="49" selection-end-line="237" selection-end-column="49" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
         </state>
       </provider>
     </entry>

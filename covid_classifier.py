@@ -215,7 +215,7 @@ style = '''font_size: 14px;
            color: #aaa;'''
 
 st.sidebar.title("About")
-img_width = '60px'
+img_width = '30px'
 
 text = f'''{small_title('The webapp')}
 <p style="{style}">This webapp uses AI and cough audio to predict COVID-19.
@@ -229,10 +229,10 @@ If there are any COVID-19 symptoms, please get tested irrespective of the classi
 {small_title('The developer')}
 <p style="{style}">I am a data lover who loves to create impactful tools that could help people make this world a better place.</p>
 <div>
-<a href="https://github.com/SarthakV7/covid19-cough-classification-webapp" target="_blank"><img src="./assets/images/github.png" width={img_width}"></a>
-<a href="https://www.kaggle.com/sarthakvajpayee" target="_blank"><img src="./assets/images/kaggle.png" width={img_width}"></a>
-<a href="https://www.linkedin.com/in/sarthak-vajpayee/" target="_blank"><img src="https://raw.githubusercontent.com/SarthakV7/covid-19-dashboard/master/assets/images/linkedin.svg" width={img_width}"></a>
-<a href="https://medium.com/@itssarthakvajpayee/" target="_blank"><img src="https://raw.githubusercontent.com/SarthakV7/covid-19-dashboard/master/assets/images/medium.png" width={img_width}"></a>
+<a href="https://github.com/SarthakV7/covid19-cough-classification-webapp" target="_blank"><img src="https://raw.githubusercontent.com/SarthakV7/covid19-cough-classification-webapp/main/assets/images/github.png" width={img_width} padding="20px"></a>
+<a href="https://www.kaggle.com/sarthakvajpayee" target="_blank"><img src="https://raw.githubusercontent.com/SarthakV7/covid19-cough-classification-webapp/main/assets/images/kaggle.png" width={img_width} padding="20px"></a>
+<a href="https://www.linkedin.com/in/sarthak-vajpayee/" target="_blank"><img src="https://raw.githubusercontent.com/SarthakV7/covid19-cough-classification-webapp/main/assets/images/linkedin.png" width={img_width} padding="20px"></a>
+<a href="https://medium.com/@itssarthakvajpayee/" target="_blank"><img src="https://raw.githubusercontent.com/SarthakV7/covid19-cough-classification-webapp/main/assets/images/medium.png" width={img_width} padding="20px"></a>
 </div>
 '''
 st.sidebar.markdown(text, unsafe_allow_html=True)
