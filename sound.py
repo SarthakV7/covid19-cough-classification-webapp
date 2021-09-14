@@ -39,7 +39,18 @@ class Sound(object):
         waveFile.setnchannels(self.channels)
         waveFile.setsampwidth(self.audio.get_sample_size(self.format))
         waveFile.setframerate(self.sample_rate)
-        waveFile.writeframes(b''.join(self.frames))
+        data = b''.join(self.frames)
+        print(data)
+        waveFile.writeframes(data)
         waveFile.close()
+
+    def save_data(self, data):
+        waveFile = open(self.path, 'wb')
+        # waveFile.setnchannels(self.channels)
+        # waveFile.setsampwidth(self.audio.get_sample_size(self.format))
+        # waveFile.setframerate(self.sample_rate)
+        waveFile.write(data)
+        waveFile.close()
+        return self.path
 
 sound = Sound()

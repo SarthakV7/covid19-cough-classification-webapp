@@ -1,10 +1,8 @@
 import streamlit as st
-import os
-import sys
 import numpy as np
 import librosa
 import librosa.display
-import plotly.express as px
+import panel as pn
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import seaborn as sns
@@ -12,7 +10,10 @@ from sound import sound
 import SessionState
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
-import streamlit.components.v1 as components  # Import Streamlit
+from bokeh.models.widgets import Button
+from bokeh.models import CustomJS
+from streamlit_bokeh_events import streamlit_bokeh_events
+import base64
 
 sample_rate = 48000
 def load_wav(x, sample_rate=48000):
@@ -112,7 +113,7 @@ def display_results(uploaded_file, flag='uploaded'):
     st.subheader('Status:')
     if y_prob>0.05:
         st.markdown('''<p style="font-size: 72px;
-                        background: -webkit-linear-gradient(#eb3349, #f45c43);
+                        background: -webkit-linear-gradient(#f45c43, #f45c43);
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
                         font-family: sans-serif;
@@ -187,17 +188,17 @@ def display_results(uploaded_file, flag='uploaded'):
 # **************************************************************************************************
 
 st.markdown('''<p style="font-size: 72px;
-                background: -webkit-linear-gradient(#dd2476, #ff512f);
+                background: #ff512f;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 font-family: sans-serif;
                 font-weight: bold;
-                font-size:40px">
+                font-size:32px">
                 COVID-19 classification through cough audio.
                 </p>''', unsafe_allow_html=True)
 
 def small_title(x):
-    text = f'''<p style="background: -webkit-linear-gradient(#dd2476, #ff512f);
+    text = f'''<p style="background: #ff512f;
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
                         font-family: sans-serif;
@@ -228,8 +229,8 @@ If there are any COVID-19 symptoms, please get tested irrespective of the classi
 {small_title('The developer')}
 <p style="{style}">I am a data lover who loves to create impactful tools that could help people make this world a better place.</p>
 <div>
-<a href="https://github.com/SarthakV7/covid19-cough-classification-webapp" target="_blank"><img src="https://raw.githubusercontent.com/SarthakV7/covid-19-dashboard/master/assets/images/github.svg" width={img_width}"></a>
-<a href="https://www.kaggle.com/sarthakvajpayee" target="_blank"><img src="https://raw.githubusercontent.com/SarthakV7/covid-19-dashboard/master/assets/images/kaggle.svg" width={img_width}"></a>
+<a href="https://github.com/SarthakV7/covid19-cough-classification-webapp" target="_blank"><img src="./assets/images/github.png" width={img_width}"></a>
+<a href="https://www.kaggle.com/sarthakvajpayee" target="_blank"><img src="./assets/images/kaggle.png" width={img_width}"></a>
 <a href="https://www.linkedin.com/in/sarthak-vajpayee/" target="_blank"><img src="https://raw.githubusercontent.com/SarthakV7/covid-19-dashboard/master/assets/images/linkedin.svg" width={img_width}"></a>
 <a href="https://medium.com/@itssarthakvajpayee/" target="_blank"><img src="https://raw.githubusercontent.com/SarthakV7/covid-19-dashboard/master/assets/images/medium.png" width={img_width}"></a>
 </div>
@@ -248,23 +249,76 @@ with st.form(key='uploader'):
     uploaded_file = st.file_uploader("Choose a file... (Try to keep the audio short 5-6 seconds and upload as a .wav file)")
     submit_button_upl = st.form_submit_button(label='Submit the uploaded audio')
 
-if st.button('Record'):
-    with st.spinner(f'Recording for 5 seconds ....'):
-        try:
-            session_state.path = sound.record()
-            st.write(session_state.path)
-        except:
-            pass
-    st.success("Recording completed")
 
-if st.button('Submit the recorded audio'):
-    # filename = 'audio.wav'
-    filename = session_state.path
-    display_results(filename, flag='recorded')
-    os.remove(filename)
+st.markdown("You could also record the cough audio in realtime through browser using the button below (The recorder will record for 5 seconds).")
+st.subheader("Here is a sample cough audio to demonstrate what the model is expecting...")
+sample_audio = open('./sample_audio.wav', 'rb').read()
+st.audio(sample_audio, format='audio/wav')
+
+
+tts_button = Button(label="Click here to record the audio through browser", default_size=8, css_classes=['bouncy'])
+
+tts_button.js_on_event("button_click", CustomJS(code="""
+    let recorder = null;
+
+    const onsuccess = (stream) => {
+    recorder = new MediaRecorder(stream, {
+        type: 'audio/ogg; codecs=opus'
+        });
+
+    recorder.start(); // Starting the record
+
+    recorder.ondataavailable = (e) => {
+        // Converting audio blob to base64
+        let reader = new FileReader()
+        reader.onloadend = () => {
+            console.log(reader.result);
+            document.dispatchEvent(new CustomEvent("GET_TEXT", {detail: reader.result}));
+        }
+
+        reader.readAsDataURL(e.data);
+        }
+    }
+
+    navigator.getUserMedia = (
+    navigator.getUserMedia ||
+    navigator.webkitGetUserMedia ||
+    navigator.mozGetUserMedia ||
+    navigator.msGetUserMedia
+    );
+
+    navigator.getUserMedia({
+    audio: true
+    }, onsuccess, (e) => {
+    console.log(e);
+    });
+
+    setTimeout(() => {
+    recorder.stop(); // Stopping the recorder after 6 seconds
+    }, 6000);
+    """))
+
+result = streamlit_bokeh_events(
+    tts_button,
+    events="GET_TEXT",
+    key="listen",
+    refresh_on_update=False,
+    override_height=75,
+    debounce_time=0)
+
+
+if result:
+    if "GET_TEXT" in result:
+        op = result.get("GET_TEXT")
+        op = op.split(',')[1]
+        decoded = base64.b64decode(op)
+        filename = sound.save_data(decoded)
+        display_results(filename, flag='recorded')
+
 
 if (uploaded_file is None and submit_button_upl):
     st.subheader('Something\'s not right, please refresh the page and retry!')
 
 elif uploaded_file and submit_button_upl:
     display_results(uploaded_file, flag='uploaded')
+
