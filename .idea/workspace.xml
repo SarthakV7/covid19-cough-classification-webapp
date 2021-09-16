@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b65ab6e1-0f6f-4edc-bc38-1a6453a74c67" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.streamlit/config.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2021-09-16-111738611016.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2021-09-16-121613852699.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2021-09-16-121919866835.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/covid_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/covid_classifier.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/covid_classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="221" column="61" lean-forward="true" selection-start-line="221" selection-start-column="61" selection-end-line="221" selection-end-column="61" />
+            <state relative-caret-position="394">
+              <caret line="304" column="45" lean-forward="true" selection-start-line="304" selection-start-column="45" selection-end-line="304" selection-end-column="45" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -156,8 +150,8 @@
     <entry file="file://$PROJECT_DIR$/static/css/styles.css" />
     <entry file="file://$PROJECT_DIR$/covid_classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="221" column="61" lean-forward="true" selection-start-line="221" selection-start-column="61" selection-end-line="221" selection-end-column="61" />
+        <state relative-caret-position="394">
+          <caret line="304" column="45" lean-forward="true" selection-start-line="304" selection-start-column="45" selection-end-line="304" selection-end-column="45" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
