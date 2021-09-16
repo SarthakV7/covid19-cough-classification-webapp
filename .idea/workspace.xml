@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b65ab6e1-0f6f-4edc-bc38-1a6453a74c67" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.streamlit/config.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2021-09-16-111738611016.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2021-09-16-121613852699.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2021-09-16-121919866835.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/covid_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/covid_classifier.py" afterDir="false" />
     </list>
@@ -16,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/covid_classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="237" column="49" lean-forward="true" selection-start-line="237" selection-start-column="49" selection-end-line="237" selection-end-column="49" />
+            <state relative-caret-position="494">
+              <caret line="221" column="61" lean-forward="true" selection-start-line="221" selection-start-column="61" selection-end-line="221" selection-end-column="61" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -47,6 +52,7 @@
       <find>#f</find>
       <find>COVID-19 classification through cough audio.</find>
       <find>img_width</find>
+      <find>COVID-19 classification through cough audio</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -116,6 +122,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="728" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.18189038" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -128,7 +135,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32861635" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.2672956" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -149,8 +156,8 @@
     <entry file="file://$PROJECT_DIR$/static/css/styles.css" />
     <entry file="file://$PROJECT_DIR$/covid_classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="237" column="49" lean-forward="true" selection-start-line="237" selection-start-column="49" selection-end-line="237" selection-end-column="49" />
+        <state relative-caret-position="494">
+          <caret line="221" column="61" lean-forward="true" selection-start-line="221" selection-start-column="61" selection-end-line="221" selection-end-column="61" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>

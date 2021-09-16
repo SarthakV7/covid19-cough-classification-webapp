@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import librosa
 import librosa.display
-import panel as pn
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import seaborn as sns
@@ -110,6 +109,7 @@ def display_results(uploaded_file, flag='uploaded'):
     features, input_features = process_data(uploaded_file)
     output = model.predict(input_features)
     y_prob = np.round(output[0][0], 4)
+    print('---> predicted probability:', y_prob)
     st.subheader('Status:')
     if y_prob>0.05:
         st.markdown('''<p style="font-size: 72px;
@@ -194,8 +194,18 @@ st.markdown('''<p style="font-size: 72px;
                 font-family: sans-serif;
                 font-weight: bold;
                 font-size:32px">
-                COVID-19 classification through cough audio.
+                COVID-19 classification through cough audio
+                </p>
+                <p style="font-size: 72px;
+                background: #ff512f;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-family: sans-serif;
+                font-weight: bold;
+                font-size:14px">
+                Desktop version
                 </p>''', unsafe_allow_html=True)
+
 
 def small_title(x):
     text = f'''<p style="background: #ff512f;
