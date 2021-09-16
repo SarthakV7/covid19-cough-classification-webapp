@@ -296,17 +296,6 @@ tts_button.js_on_event("button_click", CustomJS(code="""
     navigator.mozGetUserMedia ||
     navigator.msGetUserMedia
     );
-    
-    if (typeof navigator.mediaDevices.getUserMedia === 'undefined') {
-    navigator.getUserMedia({
-        audio: true
-    }, streamHandler, errorHandler);
-    } else {
-        navigator.mediaDevices.getUserMedia({
-            audio: true
-        }).then(streamHandler).catch(errorHandler);
-    }
-
 
     navigator.getUserMedia({
     audio: true
