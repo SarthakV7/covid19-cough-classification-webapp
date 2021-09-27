@@ -5,7 +5,6 @@ import librosa.display
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import seaborn as sns
-from sound import sound
 import SessionState
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
@@ -13,6 +12,9 @@ from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
 import base64
+from scipy.io.wavfile import write
+import datetime
+import os
 
 sample_rate = 48000
 def load_wav(x, sample_rate=48000):
@@ -316,14 +318,21 @@ result = streamlit_bokeh_events(
     override_height=75,
     debounce_time=0)
 
+def save_file(data):
+    audio_path = str(datetime.datetime.now()).replace('.','').replace(':','').replace(' ','-') + '.wav'
+    waveFile = open(audio_path, 'wb')
+    waveFile.write(data)
+    waveFile.close()
+    return audio_path
 
 if result:
     if "GET_TEXT" in result:
         op = result.get("GET_TEXT")
         op = op.split(',')[1]
         decoded = base64.b64decode(op)
-        filename = sound.save_data(decoded)
+        filename = save_file(decoded)
         display_results(filename, flag='recorded')
+        os.remove(filename)
 
 
 if (uploaded_file is None and submit_button_upl):
@@ -331,4 +340,3 @@ if (uploaded_file is None and submit_button_upl):
 
 elif uploaded_file and submit_button_upl:
     display_results(uploaded_file, flag='uploaded')
-
