@@ -2,7 +2,7 @@ streamlit
 numpy
 matplotlib
 librosa
-tensorflow
+tensorflow-cpu
 seaborn
 plotly
 bokeh
