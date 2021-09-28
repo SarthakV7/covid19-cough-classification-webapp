@@ -1,10 +1,3 @@
-[server]
-port=8502 # change port number. By default streamlit uses 8501 port
-headless=true # This will eliminate automatically open browser
-
-[browser] # This ip and port will show in command prompt
-serverAddress = "covid19-cough.eastus.cloudapp.azure.com" # Put your Local IP or Domain Name
-
 [theme]
 base="light"
 primaryColor="#ff512f"
