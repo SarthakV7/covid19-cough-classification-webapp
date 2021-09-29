@@ -114,9 +114,9 @@ def display_results(uploaded_file, flag='uploaded'):
     y_prob = np.round(output[0][0], 4)
     print('---> predicted probability:', y_prob)
     st.subheader('Status:')
-    if y_prob>0.05:
+    if y_prob>0.07:
         st.markdown('''<p style="font-size: 72px;
-                        background: #f45c43, #f45c43;
+                        background: #f45c43;
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
                         font-family: sans-serif;
