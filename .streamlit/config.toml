@@ -3,3 +3,10 @@ base="light"
 primaryColor="#ff512f"
 secondaryBackgroundColor="#fbefe8"
 textColor="#060606"
+
+[server]
+port=8501
+headless=true
+
+[browser]
+serverAddress = "covid19-cough-ai.xyz"

@@ -19,6 +19,7 @@ import os
 sample_rate = 48000
 def load_wav(x, sample_rate=48000):
     '''This return the array values of audio with sampling rate of 48000 and Duration'''
+    x = './' + x
     samples_, sample_rate = librosa.load(x, sr=sample_rate)
     non_silent = librosa.effects.split(samples_, frame_length=1024, hop_length=50)
     samples = np.concatenate([samples_[i:j] for i,j in non_silent])
@@ -197,15 +198,6 @@ st.markdown('''<p style="font-size: 72px;
                 font-weight: bold;
                 font-size:32px">
                 COVID-19 classification through cough audio
-                </p>
-                <p style="font-size: 72px;
-                background: #ff512f;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                font-family: sans-serif;
-                font-weight: bold;
-                font-size:14px">
-                Desktop version
                 </p>''', unsafe_allow_html=True)
 
 
@@ -249,9 +241,9 @@ If there are any COVID-19 symptoms, please get tested irrespective of the classi
 '''
 st.sidebar.markdown(text, unsafe_allow_html=True)
 
-data_load_state = st.text('Loading data...')
+data_load_state = st.text('Summoning the model...')
 model = load_model()
-data_load_state.text("Done! (using st.cache)")
+data_load_state.text("Done!")
 
 
 st.subheader('Please submit the cough audio')
