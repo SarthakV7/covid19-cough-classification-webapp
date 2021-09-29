@@ -311,7 +311,7 @@ result = streamlit_bokeh_events(
     debounce_time=0)
 
 def save_file(data):
-    audio_path = str(datetime.datetime.now()).replace('.','').replace(':','').replace(' ','-') + '.wav'
+    audio_path = './audio_files/' + str(datetime.datetime.now()).replace('.','').replace(':','').replace(' ','-') + '.wav'
     waveFile = open(audio_path, 'wb')
     waveFile.write(data)
     waveFile.close()
