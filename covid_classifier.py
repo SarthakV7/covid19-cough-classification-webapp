@@ -256,7 +256,7 @@ with st.form(key='uploader'):
 
 st.markdown("You could also record the cough audio in realtime through browser using the button below (The recorder will record for 5 seconds).")
 st.subheader("Here is a sample cough audio to demonstrate what the model is expecting...")
-sample_audio = open('./sample_audio.wav', 'rb').read()
+sample_audio = open('./audio_files/sample_audio.wav', 'rb').read()
 st.audio(sample_audio, format='audio/wav')
 
 
