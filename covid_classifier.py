@@ -114,7 +114,7 @@ def display_results(uploaded_file, flag='uploaded'):
     y_prob = np.round(output[0][0], 4)
     print('---> predicted probability:', y_prob)
     st.subheader('Status:')
-    if y_prob>0.07:
+    if y_prob>0.05:
         st.markdown('''<p style="font-size: 72px;
                         background: #f45c43;
                         -webkit-background-clip: text;
@@ -254,7 +254,7 @@ with st.form(key='uploader'):
     submit_button_upl = st.form_submit_button(label='Submit the uploaded audio')
 
 
-st.markdown("You could also record the cough audio in realtime through browser using the button below (The recorder will record for 5 seconds).")
+st.markdown("You could also record the cough audio in realtime through browser using the button below (The recorder will record for 5 seconds, cough 3-4 times after clicking the button).")
 st.subheader("Here is a sample cough audio to demonstrate what the model is expecting...")
 sample_audio = open('./audio_files/sample_audio.wav', 'rb').read()
 st.audio(sample_audio, format='audio/wav')
