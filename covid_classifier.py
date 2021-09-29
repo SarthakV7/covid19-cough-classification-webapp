@@ -116,7 +116,7 @@ def display_results(uploaded_file, flag='uploaded'):
     st.subheader('Status:')
     if y_prob>0.05:
         st.markdown('''<p style="font-size: 72px;
-                        background: -webkit-linear-gradient(#f45c43, #f45c43);
+                        background: #f45c43, #f45c43;
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
                         font-family: sans-serif;
@@ -127,7 +127,7 @@ def display_results(uploaded_file, flag='uploaded'):
 
     else:
         st.markdown('''<p style="font-size: 72px;
-                        background: -webkit-linear-gradient(#56ab2f, #a8e063);
+                        background: #56ab2f;
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
                         font-family: sans-serif;
